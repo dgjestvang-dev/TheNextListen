@@ -18,34 +18,43 @@
 
 <header> The Next Listen</header>
 
-<div class="nav">
+<nav>
     <ul>
         <li>Oppdag</li>
         <li>Min musikk</li>
         <li>Feed</li>
     </ul>
-</div>   
+</nav>   
 
+<main>
 <section class="intro">
-Hei og velkommen til The Next Listen!
-<br><br>
-Oppdag nye album og bygg din egen musikk-backlog.<br>
-Lagre album du vil høre senere, hold oversikt over hva du lytter til, <br> og del anbefalinger med andre.
+    <p>Hei og velkommen til The Next Listen! </p>
+
+    <p>Oppdag nye album og bygg din egen musikk-backlog.<br>
+    Lagre album du vil høre senere, hold oversikt over hva du lytter til, <br> og del anbefalinger med andre.</p>
 </section>
 
 
 <section class="search-section">  
-
     <div class="search-box">
-        <input  class="search" type="text" placeholder="Søk etter album...">
+        <label for="album-serach" class="sr-only">Søk etter album</label>
+        <input  
+            id="album-serch"
+            class="search" 
+            type="text" 
+            placeholder="Søk etter album...">
         <svg class="search-icon" width="24" height="24">
             <use href="#search-icon"></use>
         </svg>
     </div>
-
 </section>
 </body>
+</main>
 
-
+<!--
+<footer>
+    <p>&copy; 2024 The Next Listen. All rights reserved.</p>
+</footer>
+-->
 
 </html>

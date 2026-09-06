@@ -1,5 +1,12 @@
 
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
 body    {
     background-color: #121212;
     /*background-color: gray ;*/
@@ -15,14 +22,14 @@ header {
     padding: 20px;
     text-align: center;
     font-weight: 600;
-    font-size: 32px;
+    font-size: 46px;
 }
 
-.nav {
+nav {
     padding: 20px;
 }
 
-.nav ul {
+nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -31,14 +38,14 @@ header {
     justify-content: center;
 }
 
-.nav ul li {
+nav ul li {
     margin: 0 15px;
     color: #FFF;   
     opacity: 80%; 
     cursor: pointer;
 }
 
-.nav ul li:hover {
+nav ul li:hover {
     color: #FF00FF;
 }
 
@@ -47,7 +54,13 @@ header {
     opacity: 80%;
     text-align: center;
     padding: 60px;
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 1.8;
+
+}
+
+.intro p {
+    margin: 0 0 40px 0;
 }
 
 .search-section {
@@ -87,3 +100,4 @@ header {
     box-shadow: 0 0 15px  #E700D0;
     transition: box-shadow 0.3s ease;
 }
+
