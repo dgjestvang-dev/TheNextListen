@@ -5,7 +5,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html', active_page='home')
+    return render_template('discover.html', active_page='home')
 
 @app.route('/feed')
 def feed():
