@@ -49,6 +49,15 @@ nav ul li:hover {
     color: #FF00FF;
 }
 
+nav a {
+    color: #FFF;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #FF00FF;
+}
+
 .intro {
     color: #FFF;
     opacity: 80%;
@@ -101,3 +110,13 @@ nav ul li:hover {
     transition: box-shadow 0.3s ease;
 }
 
+.active a {
+    border-bottom: 3px solid #FF00FF;
+    padding-bottom: 4px;
+}
+
+h1 {
+    color: #FFF;
+    text-align: center;
+    margin: 40px 0;
+}
