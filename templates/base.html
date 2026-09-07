@@ -19,9 +19,9 @@
 
 <nav>
     <ul>
-        <li class="active"><a href="{{url_for('home')}}">Oppdag</a></li>
-        <li><a href="{{url_for('mymusic')}}">Min musikk</a></li>
-        <li><a href="{{url_for('feed')}}">Feed</a></li>
+        <li {% if active_page == 'home' %}class="active"{% endif %}><a href="{{url_for('home')}}">Oppdag</a></li>
+        <li {% if active_page == 'mymusic' %}class="active"{% endif %}><a href="{{url_for('mymusic')}}">Min musikk</a></li>
+        <li {% if active_page == 'feed' %}class="active"{% endif %}><a href="{{url_for('feed')}}">Feed</a></li>
     </ul>
 </nav>   
 

@@ -5,15 +5,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    return render_template('index.html')    
+    return render_template('index.html', active_page='home')
 
 @app.route('/feed')
 def feed():
-    return render_template('feed.html')
+    return render_template('feed.html', active_page='feed')
 
 @app.route('/mymusic')
 def mymusic():
-    return render_template('mymusic.html')
+    return render_template('mymusic.html', active_page='mymusic')
 
 
 if __name__ == "__main__":
