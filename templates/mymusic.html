@@ -1,6 +1,32 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1>Min musikk</h1>
+<section class="mymusic-section">
+    <p>Du må logge inn for å lagre album og administrere din backlog. </p>
+
+    <h2>Logg inn:</h2>
+
+    <form class="login-form">
+        <div class="login-form-group">
+            <div class="login-form-inputfield">
+                <label for="email"> E-post: </label>
+                <input type="email" id="email" placeholder="ola@example.com" name="email" required> 
+            </div>
+            <div class="login-form-inputfield">
+                <label for="password"> Passord: </label>
+                <input type="password" id="password" placeholder="Passord" name="password" required>
+            </div>
+        </div>
+
+        <button type="submit" class="secondary-btn">Logg inn</button>
+        <p>Hvis du ikke har en konto, kan du registrere deg her:</p>
+        <button type="button" class="primary-btn">Registrer</button>
+    </form>
+
+    
+    
+
+
+</section>
 
 {% endblock %}
