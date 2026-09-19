@@ -40,6 +40,12 @@ h1 {
     margin: 40px 0;
 }
 
+h2 {
+    color: #FFF;
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
 /* Primary Button Styles */
 .primary-btn{
     padding: 10px 20px;
@@ -222,4 +228,15 @@ nav a:hover {
     border: none;
     width: 100%;
     max-width: 300px;  
+}
+
+/* Feed Section Styles */
+
+.feed {
+    color: #FFF;
+    opacity: 80%;
+    text-align: center;
+    padding: 60px;
+    font-size: 20px;
+    line-height: 1.8;
 }
