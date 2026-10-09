@@ -6,12 +6,12 @@ albumSearchInput.addEventListener("keypress", function(event) {
         
         const searchTerm = event.target.value;
 
-        fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(searchTerm)}&entity=album`)
+        fetch(`https://itunes.apple.com/search?term=${encodeURIComponent(searchTerm)}&entity=album&limit=20`)
             .then(response => response.json())
             .then(data => {
                 
                 //console.log(data.results[0]); 
-
+                
                // for (const album of data.results) {
                 //    console.log(album.collectionName, album.artistName);
                 //}
@@ -19,7 +19,15 @@ albumSearchInput.addEventListener("keypress", function(event) {
                 const albumResultsContainer = document.getElementById("search-results");
                 albumResultsContainer.innerHTML = "";
                 
-                for (const album of data.results) {
+                //filter out singles from the search results
+                const filteredAlbums = data.results.filter(album => {
+                    return !album.collectionName
+                        .toLowerCase()
+                        .includes("single");
+                
+                }); 
+
+                for (const album of filteredAlbums) {
                     
                     //create album result element
                     const albumElement = document.createElement("div");
@@ -48,14 +56,21 @@ albumSearchInput.addEventListener("keypress", function(event) {
                     albumElement.appendChild(albumCover);
                     albumElement.appendChild(albumInfo);
                     albumResultsContainer.appendChild(albumElement);
-                }
 
+                                        
+                }
+                
+                    
             })
             .catch(error => {
                 console.error("Error fetching albums:", error);
             });
 
+            //clear the search input -- 
+            //albumSearchInput.value = "";
+
             console.log(searchTerm);
+           
     }
 });
 

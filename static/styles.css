@@ -192,8 +192,12 @@ nav a:hover {
     border-radius: 10px;
     transition: transform 0.3s ease;
     max-width: 500px;
-
     color: #FFF;
+}
+
+.album-result:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #E700D0;
 }
 
 .album-info {
@@ -207,9 +211,7 @@ nav a:hover {
 
 
 
-.album-result:hover {
-    transform: scale(1.05);
-}
+
 
 
 /* My Music Section Styles */
