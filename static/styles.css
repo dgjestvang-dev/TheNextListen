@@ -140,6 +140,8 @@ nav a:hover {
 
 .discover-search-section {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
     padding: 20px 0;
  
@@ -176,6 +178,39 @@ nav a:hover {
     box-shadow: 0 0 15px  #E700D0;
     transition: box-shadow 0.3s ease;
 }
+
+
+
+.album-result {
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: row;
+    align-items: center;
+    margin: 20px;
+    padding: 0 20px;
+    background-color: #1a1a1a;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    max-width: 500px;
+
+    color: #FFF;
+}
+
+.album-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    box-sizing: border-box;
+    padding: 20px;
+    
+}
+
+
+
+.album-result:hover {
+    transform: scale(1.05);
+}
+
 
 /* My Music Section Styles */
 

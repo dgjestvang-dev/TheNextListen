@@ -25,24 +25,28 @@ albumSearchInput.addEventListener("keypress", function(event) {
                     const albumElement = document.createElement("div");
                     albumElement.classList.add("album-result");
                     
+                    const albumCover = document.createElement("img");
+                    albumCover.classList.add("album-cover");
+
+                    const albumInfo = document.createElement("div");
+                    albumInfo.classList.add("album-info");
+                    
                     const albumTitle = document.createElement("h3");
                     albumTitle.classList.add("album-title");
                     
                     const albumArtist = document.createElement("p");
                     albumArtist.classList.add("album-artist");
                     
-                    const albumCover = document.createElement("img");
-                    albumCover.classList.add("album-cover");
-
                     //populate album result element with data
                     albumTitle.textContent = album.collectionName;
                     albumArtist.textContent = album.artistName;
                     albumCover.src = album.artworkUrl100; 
 
                     //append album result element to the container
-                    albumElement.appendChild(albumTitle);
-                    albumElement.appendChild(albumArtist);
-                    albumElement.appendChild(albumCover);                  
+                    albumInfo.appendChild(albumTitle);
+                    albumInfo.appendChild(albumArtist);
+                    albumElement.appendChild(albumCover);
+                    albumElement.appendChild(albumInfo);
                     albumResultsContainer.appendChild(albumElement);
                 }
 
