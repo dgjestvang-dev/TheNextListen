@@ -44,6 +44,10 @@ albumSearchInput.addEventListener("keypress", function(event) {
                     
                     const albumArtist = document.createElement("p");
                     albumArtist.classList.add("album-artist");
+
+                    const addButton = document.createElement("button");
+                    addButton.classList.add("primary-btn");
+                    addButton.textContent = "+";
                     
                     //populate album result element with data
                     albumTitle.textContent = album.collectionName;
@@ -55,6 +59,7 @@ albumSearchInput.addEventListener("keypress", function(event) {
                     albumInfo.appendChild(albumArtist);
                     albumElement.appendChild(albumCover);
                     albumElement.appendChild(albumInfo);
+                    albumElement.appendChild(addButton);
                     albumResultsContainer.appendChild(albumElement);
 
                                         

@@ -186,6 +186,8 @@ nav a:hover {
     box-sizing: border-box;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    
     margin: 20px;
     padding: 0 20px;
     background-color: #1a1a1a;
@@ -208,9 +210,6 @@ nav a:hover {
     padding: 20px;
     
 }
-
-
-
 
 
 
