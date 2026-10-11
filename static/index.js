@@ -44,19 +44,19 @@ function searchAlbums(searchTerm) {
             });   
     }
 
-//RENDER FUNCTIONS//
+//API RENDER FUNCTIONS//
 
 function renderAlbums(albums) {
     for (const album of albums) {
         
         const albumElement = 
-            createAlbumElement(album);
+            createApiAlbumElement(album);
 
         albumResultsContainer.appendChild(albumElement);
     }
 }
 
-function createAlbumElement(album) {
+function createApiAlbumElement(album) {
     //create album result element
         const albumElement = document.createElement("div");
         albumElement.classList.add("album-result");
@@ -97,8 +97,8 @@ function createAlbumElement(album) {
     return albumElement;
 }
 
-//LOCAL STORAGE FUNCTIONS//
-
+//LOCAL STORAGE RENDER FUNCTIONS --> Saved Albums//
+    // SAVING ALBUMS TO LOCAL STORAGE
 function saveAlbum(album) {
     const savedAlbum = {
         id: album.collectionId,
@@ -128,16 +128,17 @@ function saveAlbum(album) {
         "savedAlbums", 
         JSON.stringify(savedAlbums));
 
-        alert("Album lagt til og vises under Min musikk");
+        alert(`${savedAlbum.title} lagt til og vises under Min musikk`);
     }
     else {
-        alert("Albumet er allerede lagret under Min musikk");
+        alert(`${savedAlbum.title} er allerede lagret under Min musikk`);
     }
     
 
     console.log(savedAlbum);
 }
 
+    // LOADING SAVED ALBUMS FROM LOCAL STORAGE
 function loadSavedAlbums() {
     
     const savedAlbumsContainer = document.getElementById("saved-albums");
@@ -148,7 +149,64 @@ function loadSavedAlbums() {
     }
 
     for (const album of savedAlbums) {
-        const albumElement = createAlbumElement(album);
+        const albumElement = createSavedAlbumElement(album);
         savedAlbumsContainer.appendChild(albumElement);
     }
+    
 }
+
+function createSavedAlbumElement(album) {
+    const albumElement = document.createElement("div");
+    albumElement.classList.add("album");
+
+    const albumCover = document.createElement("img");
+    albumCover.classList.add("album-cover");
+
+    const albumInfo = document.createElement("div");
+    albumInfo.classList.add("album-info");
+
+    const albumRating = document.createElement("p");
+    albumRating.classList.add("album-rating");
+
+    const albumStatus = document.createElement("p");
+    albumStatus.classList.add("album-status");
+
+    const albumYear = document.createElement("p");
+    albumYear.classList.add("album-year");
+
+    const albumTitle = document.createElement("h3");
+    albumTitle.classList.add("album-title");
+
+    const albumArtist = document.createElement("p");
+    albumArtist.classList.add("album-artist");
+
+    const removeButton = document.createElement("button");
+    removeButton.classList.add("primary-btn");
+    removeButton.textContent = "−";
+
+    removeButton.addEventListener("click", function() {
+        removeAlbum(album.id);
+    });
+
+    //populate saved album result element with data
+    albumTitle.textContent = album.title;
+    albumArtist.textContent = album.artist;
+    albumCover.src = album.cover; 
+    albumYear.textContent = new Date(album.releaseDate).getFullYear();
+    albumStatus.textContent = album.status;
+    albumRating.textContent = album.rating || "Ingen vurdering";
+
+    // build saved album card structure
+    albumInfo.appendChild(albumTitle);
+    albumInfo.appendChild(albumArtist);
+    albumInfo.appendChild(albumYear);
+    albumInfo.appendChild(albumStatus);
+    albumInfo.appendChild(albumRating);
+    albumElement.appendChild(albumCover);
+    albumElement.appendChild(albumInfo);
+    albumElement.appendChild(removeButton);
+
+    return albumElement;
+}
+
+loadSavedAlbums();

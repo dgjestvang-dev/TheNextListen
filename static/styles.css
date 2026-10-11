@@ -226,6 +226,11 @@ nav a:hover {
 
 
 
+
+
+/* Login Section Styles */
+
+
 .login-form {
     display: flex;
     flex-direction: column;
