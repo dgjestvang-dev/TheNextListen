@@ -1,17 +1,21 @@
 //DOM ELEMENTS //
 
 const albumSearchInput = document.getElementById("album-search");
-const albumResultsContainer = document.getElementById("search-results");
+const albumResultsContainer = document.getElementById("search-results");   
+ 
 
 //Event LISTENERS //
 
-albumSearchInput.addEventListener("keypress", function(event) {
+if (albumSearchInput) {
+    albumSearchInput.addEventListener("keypress", function(event) {
     if (event.key === "Enter") {
         
         const searchTerm = event.target.value;
         searchAlbums(searchTerm);
     }
 });
+}   
+
 
 //API FUNCTIONS//
 
@@ -72,6 +76,11 @@ function createAlbumElement(album) {
         const addButton = document.createElement("button");
         addButton.classList.add("primary-btn");
         addButton.textContent = "+";
+
+        addButton.addEventListener("click", function() {
+            saveAlbum(album);
+        });
+
         
         //populate album result element with data
         albumTitle.textContent = album.collectionName;
@@ -88,5 +97,58 @@ function createAlbumElement(album) {
     return albumElement;
 }
 
+//LOCAL STORAGE FUNCTIONS//
 
-             
+function saveAlbum(album) {
+    const savedAlbum = {
+        id: album.collectionId,
+        title: album.collectionName,
+        artist: album.artistName,
+        cover: album.artworkUrl100,
+        releaseDate: album.releaseDate,
+        status: "Skal sjekke ut",
+        rating: null
+    };
+
+    let savedAlbums = 
+        JSON.parse(localStorage.getItem("savedAlbums"));
+    
+        if (savedAlbums === null) {
+        savedAlbums =[];
+    }
+    
+    const albumExists = savedAlbums.some(function(existingAlbum) {
+        return existingAlbum.id === savedAlbum.id;
+    });
+
+    if (!albumExists) {
+        savedAlbums.push(savedAlbum);
+
+        localStorage.setItem(
+        "savedAlbums", 
+        JSON.stringify(savedAlbums));
+
+        alert("Album lagt til og vises under Min musikk");
+    }
+    else {
+        alert("Albumet er allerede lagret under Min musikk");
+    }
+    
+
+    console.log(savedAlbum);
+}
+
+function loadSavedAlbums() {
+    
+    const savedAlbumsContainer = document.getElementById("saved-albums");
+
+    let savedAlbums = JSON.parse(localStorage.getItem("savedAlbums"));
+    if (savedAlbums === null) {
+        savedAlbums = [];
+    }
+
+    for (const album of savedAlbums) {
+        const albumElement = createAlbumElement(album);
+        savedAlbumsContainer.appendChild(albumElement);
+    }
+}
