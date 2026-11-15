@@ -157,36 +157,36 @@ function loadSavedAlbums() {
 
 function createSavedAlbumElement(album) {
     const albumElement = document.createElement("div");
-    albumElement.classList.add("album");
+    albumElement.classList.add("album-card");
 
     const albumCover = document.createElement("img");
-    albumCover.classList.add("album-cover");
+    albumCover.classList.add("saved-album-cover");
 
     const albumInfo = document.createElement("div");
-    albumInfo.classList.add("album-info");
+    albumInfo.classList.add("saved-album-info");
 
     const albumRating = document.createElement("p");
-    albumRating.classList.add("album-rating");
+    albumRating.classList.add("saved-album-rating");
 
     const albumStatus = document.createElement("p");
-    albumStatus.classList.add("album-status");
+    albumStatus.classList.add("saved-album-status");
 
     const albumYear = document.createElement("p");
-    albumYear.classList.add("album-year");
+    albumYear.classList.add("saved-album-year");
 
     const albumTitle = document.createElement("h3");
-    albumTitle.classList.add("album-title");
+    albumTitle.classList.add("saved-album-title");
 
     const albumArtist = document.createElement("p");
-    albumArtist.classList.add("album-artist");
+    albumArtist.classList.add("saved-album-artist");
 
-    const removeButton = document.createElement("button");
-    removeButton.classList.add("primary-btn");
-    removeButton.textContent = "−";
+    //const removeButton = document.createElement("button");
+    //removeButton.classList.add("primary-btn");
+    //removeButton.textContent = "−";
 
-    removeButton.addEventListener("click", function() {
-        removeAlbum(album.id);
-    });
+    //removeButton.addEventListener("click", function() {
+    //    removeAlbum(album.id);
+    //});
 
     //populate saved album result element with data
     albumTitle.textContent = album.title;
@@ -200,11 +200,11 @@ function createSavedAlbumElement(album) {
     albumInfo.appendChild(albumTitle);
     albumInfo.appendChild(albumArtist);
     albumInfo.appendChild(albumYear);
-    albumInfo.appendChild(albumStatus);
-    albumInfo.appendChild(albumRating);
+    //albumInfo.appendChild(albumStatus);
+    //albumInfo.appendChild(albumRating);
     albumElement.appendChild(albumCover);
     albumElement.appendChild(albumInfo);
-    albumElement.appendChild(removeButton);
+    //albumElement.appendChild(removeButton);
 
     return albumElement;
 }
