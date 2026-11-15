@@ -168,8 +168,21 @@ function createSavedAlbumElement(album) {
     const albumRating = document.createElement("p");
     albumRating.classList.add("saved-album-rating");
 
-    const albumStatus = document.createElement("p");
+    const albumStatus = document.createElement("select");
     albumStatus.classList.add("saved-album-status");
+    
+    const statusOptions = ["Skal sjekke ut", "Sjekker ut nå", "Har sjekket ut"];
+    for (const status of statusOptions) {
+        const option = document.createElement("option");
+        option.value = status;
+        option.textContent = status;
+
+        if (album.status === status) {
+            option.selected = true;
+        }
+        
+        albumStatus.appendChild(option);
+    }   
 
     const albumYear = document.createElement("p");
     albumYear.classList.add("saved-album-year");
@@ -193,14 +206,14 @@ function createSavedAlbumElement(album) {
     albumArtist.textContent = album.artist;
     albumCover.src = album.cover; 
     albumYear.textContent = new Date(album.releaseDate).getFullYear();
-    albumStatus.textContent = album.status;
+    
     albumRating.textContent = album.rating || "Ingen vurdering";
 
     // build saved album card structure
     albumInfo.appendChild(albumTitle);
     albumInfo.appendChild(albumArtist);
     albumInfo.appendChild(albumYear);
-    //albumInfo.appendChild(albumStatus);
+    albumInfo.appendChild(albumStatus);
     //albumInfo.appendChild(albumRating);
     albumElement.appendChild(albumCover);
     albumElement.appendChild(albumInfo);
