@@ -138,10 +138,14 @@ function saveAlbum(album) {
     console.log(savedAlbum);
 }
 
-    // LOADING SAVED ALBUMS FROM LOCAL STORAGE
+    // LOADING SAVED ALBUMS FROM LOCAL STORAGE //
 function loadSavedAlbums() {
     
     const savedAlbumsContainer = document.getElementById("saved-albums");
+
+    const checkingOutNowContainer = document.getElementById("checking-out-now");
+    const willCheckOutContainer = document.getElementById("will-check-out");
+    const checkedOutContainer = document.getElementById("checked-out"); 
 
     let savedAlbums = JSON.parse(localStorage.getItem("savedAlbums"));
     if (savedAlbums === null) {
@@ -150,11 +154,18 @@ function loadSavedAlbums() {
 
     for (const album of savedAlbums) {
         const albumElement = createSavedAlbumElement(album);
-        savedAlbumsContainer.appendChild(albumElement);
+        if (album.status === "Sjekker ut nå") {
+            checkingOutNowContainer.appendChild(albumElement);
+        } else if (album.status === "Skal sjekke ut") {
+            willCheckOutContainer.appendChild(albumElement);
+        } else if (album.status === "Har sjekket ut") {
+            checkedOutContainer.appendChild(albumElement);
+        } 
     }
     
 }
 
+    // CREATE SAVED ALBUM ELEMENT
 function createSavedAlbumElement(album) {
     const albumElement = document.createElement("div");
     albumElement.classList.add("album-card");
@@ -168,6 +179,7 @@ function createSavedAlbumElement(album) {
     const albumRating = document.createElement("p");
     albumRating.classList.add("saved-album-rating");
 
+        // CREATE ALBUM STATUS SELECT ELEMENT
     const albumStatus = document.createElement("select");
     albumStatus.classList.add("saved-album-status");
     
@@ -197,7 +209,13 @@ function createSavedAlbumElement(album) {
         if (savedAlbum) {
             savedAlbum.status = newStatus;
             localStorage.setItem("savedAlbums", JSON.stringify(savedAlbums));
+
+            document.getElementById("checking-out-now").innerHTML = "";
+            document.getElementById("will-check-out").innerHTML = "";
+            document.getElementById("checked-out").innerHTML = "";
+            loadSavedAlbums();
         }
+        
     
     });
 
@@ -238,7 +256,7 @@ function createSavedAlbumElement(album) {
 
     return albumElement;
 }
-
+    // REMOVE ALBUM FROM LOCAL STORAGE AND UPDATE DISPLAY //
 function removeAlbum(albumId) {
     let savedAlbums = JSON.parse(localStorage.getItem("savedAlbums"));
     

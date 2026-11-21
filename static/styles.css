@@ -43,8 +43,9 @@ h1 {
 h2 {
     color: #FFF;
     text-align: center;
-    margin: 0 0 20px 0;
+    margin: 0;
 }
+
 
 /* Primary Button Styles */
 .primary-btn{
@@ -89,8 +90,9 @@ h2 {
 .alternative-btn{
     padding: 10px 20px;
     background-color: #121212;
-    color: #E700D0;
-    border: 1px solid #E700D0;
+    color: #fff;
+    border: 1px solid #fff;
+    opacity: 60%;
     border-radius: 50px;
     cursor: pointer;
     font-size: 16px;
@@ -98,8 +100,15 @@ h2 {
 }
 
 .alternative-btn:hover {
-    background-color: #E700D0;
-    color: #121212;
+    background-color: #121212;
+    border: 1px solid #E700D0;
+    color: #E700D0;
+}
+
+.alternative-btn:focus {
+    outline: none;
+    outline: 2px solid #E700D0;
+    outline-offset: 2px;
 }
 
 
@@ -242,20 +251,27 @@ nav a:hover {
 .mymusic-section {
     color: #FFF;
     opacity: 80%;
-    text-align: center;
+    text-align: left;
     padding: 60px;
     font-size: 20px;
     line-height: 1.8;
+    
 }   
 
+.mymusic-section h2 {
+    margin-top: 20px;
+    text-align: left;
+}
 
-#saved-albums {
+#checking-out-now,
+#will-check-out,
+#checked-out {
     display: flex;
     box-sizing: border-box;
     flex-wrap: wrap;
     justify-content: flex-start;
-    margin: 20px;
-    padding: 20px;
+    margin: 10px 20px;
+    
     border-radius: 10px;
     transition: transform 0.3s ease;
     color: #FFF;
@@ -268,7 +284,7 @@ nav a:hover {
 .album-card {
     display: flex;
     align-items: center;
-    margin: 20px;
+    margin: 20px 20px 0 0;
     padding: 10px 20px;
     background-color: #1a1a1a;
     border-radius: 10px;
