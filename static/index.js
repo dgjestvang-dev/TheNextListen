@@ -265,7 +265,9 @@ function removeAlbum(albumId) {
     });
 
     localStorage.setItem("savedAlbums", JSON.stringify(savedAlbums));
-    document.getElementById("saved-albums").innerHTML = "";
+    document.getElementById("checking-out-now").innerHTML = "";
+    document.getElementById("will-check-out").innerHTML = "";
+    document.getElementById("checked-out").innerHTML = "";
     loadSavedAlbums();
  
 }
