@@ -19,13 +19,14 @@ body    {
 }
 
 header {
-    background-color: #121212;
-    color:#E700D0;
-    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 60px;
     margin: 10px;
-    text-align: center;
+    align-items: center;
     font-weight: 600;
-    font-size: 46px;
+    font-size: 64px;
+    gap: 20px;
 }
 
 .site-logo {
@@ -33,20 +34,30 @@ header {
   align-items: center;
   gap: 10px;
   color: #f2f0f1;
-  font-size: 1.5rem;
+  font-size: 36px;
   font-weight: 700;
   line-height: 1.1;
   text-decoration: none;
+  font-family: 'Barlow', sans-serif;
+  font-weight: 700;
 }
 
 .site-logo svg {
   flex: none;
   color: #f000cf;
-  height: 32px;
-  width: 32px;
+  height: 62px;
+  width: 62px;
 }
 
+.user-icon {   
+    width: 24px;
+    height: 24px;
+    fill: #FFF;
+}
 
+.user-icon:hover {
+    fill: #E700D0;
+}
 
 .active a {
     border-bottom: 3px solid #FF00FF;
@@ -173,7 +184,7 @@ nav a:hover {
     color: #FFF;
     opacity: 80%;
     text-align: center;
-    padding: 60px;
+    padding: 20px;
     font-size: 20px;
     line-height: 1.8;
 }
@@ -271,7 +282,7 @@ nav a:hover {
     color: #FFF;
     opacity: 80%;
     text-align: left;
-    padding: 60px;
+    padding: 0 30px;
     font-size: 20px;
     line-height: 1.8;
     
@@ -280,6 +291,7 @@ nav a:hover {
 .mymusic-section h2 {
     margin-top: 20px;
     text-align: left;
+    font-size: 20px;
 }
 
 #checking-out-now,
