@@ -294,7 +294,7 @@ nav a:hover {
 }
 
 .album-group { 
-    max-width: 1600px; 
+    max-width: 1420px; 
     margin: 0 auto;
 }
 
@@ -319,10 +319,11 @@ nav a:hover {
     transition: transform 0.3s ease;
     color: #FFF;
     
-    /*border: 1px solid #E700D0; */
-    max-width: 1600px;
+    /*border: 1px solid #E700D0; */   
+    max-width: 1420px;
     margin: 0 auto;
 }
+
 
 .album-card {
     display: flex;
@@ -367,6 +368,12 @@ nav a:hover {
 
 
  .saved-album-status {
+    padding: 5px 8px;
+    border-radius: 15px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #FFF;
+    font-size: 14px;
     width: fit-content;
 }
 
@@ -441,3 +448,28 @@ nav a:hover {
 }
 
 
+@media (max-width: 1490px) {
+    .album-group {
+        max-width: 950px;
+        margin: 0 auto;   
+    }
+
+}
+
+@media (max-width: 1020px) {
+    .album-group {
+        max-width: 470px;
+        margin: 0 auto;   
+    }
+}
+
+@media (max-width: 670px) { 
+    nav ul {
+    gap: 0px;
+}
+
+header {
+    padding: 20px 20px; 
+
+}
+}
