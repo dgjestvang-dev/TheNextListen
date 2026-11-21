@@ -211,7 +211,7 @@ function createSavedAlbumElement(album) {
     albumArtist.classList.add("saved-album-artist");
 
     const removeButton = document.createElement("button");
-    removeButton.classList.add("primary-btn");
+    removeButton.classList.add("alternative-btn");
     removeButton.textContent = "−";
 
     removeButton.addEventListener("click", function() {
