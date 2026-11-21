@@ -319,7 +319,7 @@ nav a:hover {
     transition: transform 0.3s ease;
     color: #FFF;
     
-    /*border: 1px solid #E700D0; */   
+   /* border: 1px solid #E700D0; */    
     max-width: 1420px;
     margin: 0 auto;
 }
@@ -328,7 +328,7 @@ nav a:hover {
 .album-card {
     display: flex;
     align-items: center;
-    margin: 20px 20px 10px 0;
+    margin: 10px ;
     padding: 10px 20px;
     background-color: #1a1a1a;
     border-radius: 10px;
@@ -380,6 +380,15 @@ nav a:hover {
 
 /* Login Section Styles */
 
+.login-section {
+    color: #FFF;
+    opacity: 80%;
+    text-align: center;
+    padding: 0 10px;
+    font-size: 20px;
+    line-height: 1.8;
+}
+
 .login-form {
     display: flex;
     flex-direction: column;
@@ -396,7 +405,7 @@ nav a:hover {
     gap: 10px;
     margin: 0 auto;
     width: 500px;
-    padding: 20px;
+    padding: 10px;
     /*border: solid 1px rgb(55, 0, 255);   */  
 }
 
@@ -448,7 +457,7 @@ nav a:hover {
 }
 
 
-@media (max-width: 1490px) {
+@media (max-width: 1500px) {
     .album-group {
         max-width: 950px;
         margin: 0 auto;   
@@ -456,7 +465,7 @@ nav a:hover {
 
 }
 
-@media (max-width: 1020px) {
+@media (max-width: 1030px) {
     .album-group {
         max-width: 470px;
         margin: 0 auto;   
@@ -472,4 +481,76 @@ header {
     padding: 20px 20px; 
 
 }
+}
+
+@media (max-width: 525px) {
+    .album-card {
+        flex-direction: column;
+        flex: 0 0 260px; 
+        
+    }
+
+    .site-logo {
+        font-size: 32px;
+    }
+
+    .site-logo svg {
+        height: 50px;
+        width: 50px;
+    }
+
+    .mymusic-section {
+        padding: 0px 10px;
+    }
+
+    #checking-out-now,
+    #will-check-out,
+    #checked-out {
+        justify-content: center;
+        
+    }   
+
+    p, h3 {
+        text-align: center;
+    }
+
+     .album-group-header {
+        justify-content: center;
+    }
+
+    /* Discover page */
+    .discover-search {
+        margin: 0px 15px auto;
+
+    }
+
+    .discover-search-box .search-icon {
+    left: 25px;
+    }   
+
+    .saved-album-info {
+    align-items: center;
+}
+    /* Login Section */
+
+    .login-form-group {
+     width: 100%;
+     margin: 10px;  
+    }
+
+    .login-form-inputfield {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    
+    /*border: solid 1px red; */   
+}
+}
+
+/* FIX NAVIGATION TEXT ALIGNMENT FOR SMALL SCREENS */
+@media (max-width: 495px) { 
+    nav ul {
+        text-align: center;
+    }
 }
