@@ -28,6 +28,25 @@ header {
     font-size: 46px;
 }
 
+.site-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #f2f0f1;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-decoration: none;
+}
+
+.site-logo svg {
+  flex: none;
+  color: #f000cf;
+  height: 32px;
+  width: 32px;
+}
+
+
 
 .active a {
     border-bottom: 3px solid #FF00FF;
@@ -101,7 +120,7 @@ h2 {
 
 .alternative-btn:hover {
     background-color: #121212;
-    border: 1px solid #E700D0;
+    border: 2px solid #E700D0;
     color: #E700D0;
 }
 
@@ -396,3 +415,5 @@ nav a:hover {
     font-size: 20px;
     line-height: 1.8;
 }
+
+
