@@ -4,7 +4,7 @@ const albumSearchInput = document.getElementById("album-search");
 const albumResultsContainer = document.getElementById("search-results");   
  
 
-//Event LISTENERS //
+//GLOBAL EVENT LISTENERS //
 
 if (albumSearchInput) {
     albumSearchInput.addEventListener("keypress", function(event) {
@@ -180,9 +180,26 @@ function createSavedAlbumElement(album) {
         if (album.status === status) {
             option.selected = true;
         }
-        
+
         albumStatus.appendChild(option);
     }   
+
+    albumStatus.addEventListener("change", function() {
+        console.log(albumStatus.value);
+        const newStatus = albumStatus.value;
+
+        const savedAlbums = JSON.parse(localStorage.getItem("savedAlbums"));
+
+        const savedAlbum = savedAlbums.find(function(savedAlbum) {
+            return savedAlbum.id === album.id;
+        });
+
+        if (savedAlbum) {
+            savedAlbum.status = newStatus;
+            localStorage.setItem("savedAlbums", JSON.stringify(savedAlbums));
+        }
+    
+    });
 
     const albumYear = document.createElement("p");
     albumYear.classList.add("saved-album-year");

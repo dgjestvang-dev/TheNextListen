@@ -15,6 +15,9 @@ def feed():
 def mymusic():
     return render_template('mymusic.html', active_page='mymusic')
 
+@app.route('/login')
+def login():
+    return render_template('login.html', active_page='login')
 
 if __name__ == "__main__":
     app.run(debug=True)
