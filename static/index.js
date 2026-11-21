@@ -210,13 +210,13 @@ function createSavedAlbumElement(album) {
     const albumArtist = document.createElement("p");
     albumArtist.classList.add("saved-album-artist");
 
-    //const removeButton = document.createElement("button");
-    //removeButton.classList.add("primary-btn");
-    //removeButton.textContent = "−";
+    const removeButton = document.createElement("button");
+    removeButton.classList.add("primary-btn");
+    removeButton.textContent = "−";
 
-    //removeButton.addEventListener("click", function() {
-    //    removeAlbum(album.id);
-    //});
+    removeButton.addEventListener("click", function() {
+        removeAlbum(album.id);
+    });
 
     //populate saved album result element with data
     albumTitle.textContent = album.title;
@@ -234,9 +234,24 @@ function createSavedAlbumElement(album) {
     //albumInfo.appendChild(albumRating);
     albumElement.appendChild(albumCover);
     albumElement.appendChild(albumInfo);
-    //albumElement.appendChild(removeButton);
+    albumElement.appendChild(removeButton);
 
     return albumElement;
 }
 
+function removeAlbum(albumId) {
+    let savedAlbums = JSON.parse(localStorage.getItem("savedAlbums"));
+    
+    savedAlbums = savedAlbums.filter(function(savedAlbum) {
+        return savedAlbum.id !== albumId;
+    });
+
+    localStorage.setItem("savedAlbums", JSON.stringify(savedAlbums));
+    document.getElementById("saved-albums").innerHTML = "";
+    loadSavedAlbums();
+ 
+}
+
+
 loadSavedAlbums();
+
