@@ -290,11 +290,16 @@ nav a:hover {
 
 .mymusic-section h2 {
     margin-top: 20px;
-    text-align: left;
     font-size: 20px;
 }
 
-.album-group-section {
+.album-group { 
+    max-width: 1600px; 
+    margin: 0 auto;
+}
+
+
+.album-group-header {
     display: flex;
     align-items: center;
     gap: 10px;
@@ -322,7 +327,7 @@ nav a:hover {
 .album-card {
     display: flex;
     align-items: center;
-    margin: 20px 20px 0 0;
+    margin: 20px 20px 10px 0;
     padding: 10px 20px;
     background-color: #1a1a1a;
     border-radius: 10px;

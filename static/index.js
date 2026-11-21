@@ -272,6 +272,5 @@ function removeAlbum(albumId) {
  
 }
 
-
 loadSavedAlbums();
 
