@@ -294,6 +294,13 @@ nav a:hover {
     font-size: 20px;
 }
 
+.album-group-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
 #checking-out-now,
 #will-check-out,
 #checked-out {
