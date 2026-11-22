@@ -236,7 +236,10 @@ function createSavedAlbumElement(album) {
     removeButton.textContent = "−";
 
     removeButton.addEventListener("click", function() {
-        removeAlbum(album.id);
+        if (confirm("Er du sikker på at du vil fjerne dette albumet?")) {
+            removeAlbum(album.id);
+        }   
+        
     });
 
     

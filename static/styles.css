@@ -538,6 +538,12 @@ header {
     .saved-album-info {
     align-items: center;
 }
+
+    .saved-album-actions {
+    gap: 15px;
+}
+
+
     /* Login Section */
 
     .login-form-group {
