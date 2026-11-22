@@ -44,6 +44,50 @@ function searchAlbums(searchTerm) {
             });   
     }
 
+//Message Functions
+
+function showConfirmDialog() {
+
+    const confirmDialog = document.getElementById("confirm-dialog");
+    confirmDialog.classList.add("visible");
+}
+
+function hideConfirmDialog() {
+    const confirmDialog = document.getElementById("confirm-dialog");
+    confirmDialog.classList.remove("visible");
+}
+
+let albumToRemove = null;
+
+const confirmYes = document.getElementById("confirm-yes");
+const confirmNo = document.getElementById("confirm-no");
+
+confirmNo.addEventListener("click", function() {
+    hideConfirmDialog();
+});
+confirmYes.addEventListener("click", function() {
+    if (albumToRemove !== null) {
+        removeAlbum(albumToRemove);
+    }
+    albumToRemove = null;
+    hideConfirmDialog();
+});
+
+
+
+function showMessage(message) {
+
+    const messageContainer = document.getElementById("message-container");  
+
+    messageContainer.textContent = message;
+    messageContainer.classList.add("visible");
+    setTimeout(() => {
+        messageContainer.classList.remove("visible");  
+        messageContainer.textContent = "";
+    }, 10000);
+}
+
+
 //API RENDER FUNCTIONS//
 
 function renderAlbums(albums) {
@@ -128,10 +172,10 @@ function saveAlbum(album) {
         "savedAlbums", 
         JSON.stringify(savedAlbums));
 
-        alert(`${savedAlbum.title} lagt til og vises under Min musikk`);
+        showMessage(`${savedAlbum.title} lagt til og vises under Min musikk`);
     }
     else {
-        alert(`${savedAlbum.title} er allerede lagret under Min musikk`);
+        showMessage(`${savedAlbum.title} er allerede lagret under Min musikk`);
     }
     
 
@@ -236,11 +280,11 @@ function createSavedAlbumElement(album) {
     removeButton.textContent = "−";
 
     removeButton.addEventListener("click", function() {
-        if (confirm("Er du sikker på at du vil fjerne dette albumet?")) {
-            removeAlbum(album.id);
-        }   
-        
-    });
+
+        albumToRemove = album.id;
+        showConfirmDialog();    
+               
+    }); 
 
     
 

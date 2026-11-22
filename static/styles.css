@@ -7,7 +7,44 @@
     overflow: hidden;
 }
 
-/* General Styles */
+/* DIALOG STYLES */
+
+#message-container {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    background-color: #E700D0;
+    color: #121212;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+#confirm-dialog {
+    display: none;
+}
+#confirm-dialog.visible {
+    display: block;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: 2px solid #E700D0;
+    background-color: #121212;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+
+#message-container {
+    display: none;
+}
+#message-container.visible {
+    display: block;
+}
+
+/* GENERAL STYLES */
 
 body    {
     background-color: #121212;
@@ -28,6 +65,7 @@ header {
     font-size: 64px;
     gap: 20px;
 }
+
 
 .site-logo {
   display: inline-flex;
