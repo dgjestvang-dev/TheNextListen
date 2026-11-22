@@ -73,6 +73,17 @@ confirmYes.addEventListener("click", function() {
     hideConfirmDialog();
 });
 
+function showConfirmDialog(albumTitle) {
+            
+    const confirmDialog = document.getElementById("confirm-dialog");
+    const confirmMessage = document.getElementById("confirm-message");
+    
+    confirmMessage.textContent = `Er du sikker på at du vil fjerne "${albumTitle}" fra min musikk?`;
+    
+    confirmDialog.classList.add("visible");
+
+    
+}
 
 
 function showMessage(message) {
@@ -282,13 +293,13 @@ function createSavedAlbumElement(album) {
     removeButton.addEventListener("click", function() {
 
         albumToRemove = album.id;
-        showConfirmDialog();    
+                
+        showConfirmDialog(album.title);    
                
     }); 
 
     
-
-    
+  
     
 
     //populate saved album result element with data
