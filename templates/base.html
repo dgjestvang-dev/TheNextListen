@@ -96,8 +96,8 @@
                 <a href="{{url_for('feed')}}">Feed</a>
             </li>
             <li {% if active_page == 'login' %}class="active"{% endif %}>
-                <a href="{{url_for('login')}}">
-                    <svg class="user-icon" width="24" height="24">
+                <a href="{{url_for('login')}}" aria-label="Bruker profil">
+                    <svg class="user-icon" width="24" height="24" aria-hidden="true">
                         <use href="#user-icon"></use>
                     </svg>
                 </a>

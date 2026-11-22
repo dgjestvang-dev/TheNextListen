@@ -141,6 +141,7 @@ function createApiAlbumElement(album) {
         albumTitle.textContent = album.collectionName;
         albumArtist.textContent = album.artistName;
         albumCover.src = album.artworkUrl100; 
+        albumCover.alt = `${album.collectionName} av ${album.artistName}`;
 
         // build album card structure
         albumInfo.appendChild(albumTitle);
@@ -240,6 +241,7 @@ function createSavedAlbumElement(album) {
         // CREATE ALBUM STATUS SELECT ELEMENT
     const albumStatus = document.createElement("select");
     albumStatus.classList.add("saved-album-status");
+    albumStatus.setAttribute("aria-label", `Velg status for albumet ${album.title}`);
     
     const statusOptions = ["Skal sjekke ut", "Sjekker ut nå", "Har sjekket ut"];
     for (const status of statusOptions) {
@@ -305,7 +307,8 @@ function createSavedAlbumElement(album) {
     //populate saved album result element with data
     albumTitle.textContent = album.title;
     albumArtist.textContent = album.artist;
-    albumCover.src = album.cover; 
+    albumCover.src = album.cover;
+    albumCover.alt = `${album.title} av ${album.artist}`;
     albumYear.textContent = new Date(album.releaseDate).getFullYear();
     
     albumRating.textContent = album.rating || "Ingen vurdering";

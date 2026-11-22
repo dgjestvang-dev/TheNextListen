@@ -437,6 +437,11 @@ nav a:hover {
     width: fit-content;
 }
 
+.saved-album-status:hover {
+    background-color: #333;
+    border-color: #E700D0;
+}
+
 
 /* Login Section Styles */
 
