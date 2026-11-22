@@ -176,6 +176,9 @@ function createSavedAlbumElement(album) {
     const albumInfo = document.createElement("div");
     albumInfo.classList.add("saved-album-info");
 
+    const albumActions = document.createElement("div");
+    albumActions.classList.add("saved-album-actions");
+
     const albumRating = document.createElement("p");
     albumRating.classList.add("saved-album-rating");
 
@@ -236,6 +239,11 @@ function createSavedAlbumElement(album) {
         removeAlbum(album.id);
     });
 
+    
+
+    
+    
+
     //populate saved album result element with data
     albumTitle.textContent = album.title;
     albumArtist.textContent = album.artist;
@@ -248,11 +256,15 @@ function createSavedAlbumElement(album) {
     albumInfo.appendChild(albumTitle);
     albumInfo.appendChild(albumArtist);
     albumInfo.appendChild(albumYear);
-    albumInfo.appendChild(albumStatus);
+
+    // append status and remove button to album actions container
+    albumActions.appendChild(albumStatus);
+    albumActions.appendChild(removeButton);
+
     //albumInfo.appendChild(albumRating);
     albumElement.appendChild(albumCover);
     albumElement.appendChild(albumInfo);
-    albumElement.appendChild(removeButton);
+    albumInfo.appendChild(albumActions); 
 
     return albumElement;
 }

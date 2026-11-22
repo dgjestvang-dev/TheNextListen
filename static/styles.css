@@ -118,11 +118,11 @@ h2 {
 }
 
 .alternative-btn{
-    padding: 10px 20px;
+    padding: 5px 15px;
     background-color: #121212;
     color: #fff;
     border: 1px solid #fff;
-    opacity: 60%;
+    opacity: 40%;
     border-radius: 50px;
     cursor: pointer;
     font-size: 16px;
@@ -364,6 +364,13 @@ nav a:hover {
 
 .saved-album-info {
     margin-left: 15px; 
+}
+
+
+.saved-album-actions {
+    display: flex;
+    margin-top: 4px;
+    justify-content: space-between;
 }
 
 
