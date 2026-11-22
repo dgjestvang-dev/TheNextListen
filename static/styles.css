@@ -31,9 +31,24 @@
 
     border: 2px solid #E700D0;
     background-color: #121212;
-    padding: 20px;
-    border-radius: 10px;
+    color: #FFF;
 
+    padding: 15px 20px;
+    border-radius: 10px;
+       
+
+}
+
+#confirm-dialog.visible h3, #confirm-dialog.visible p {
+    margin-top: 10px;
+    opacity: 80%;
+}
+
+.confirm-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
 }
 
 
@@ -117,7 +132,7 @@ h2 {
 
 /* Primary Button Styles */
 .primary-btn{
-    padding: 10px 20px;
+    padding: 5px 15px;
     background-color: #E700D0;
     color: #121212;
     border: none;
@@ -134,7 +149,7 @@ h2 {
 
 /* Secondary Button Styles */
 .secondary-btn{
-    padding: 10px 20px;
+    padding: 5px 15px;
     background-color: #FFF;
     color: #121212;
     border: none;
