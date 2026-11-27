@@ -17,12 +17,16 @@ html {
 
 #message-container {
     position: fixed;
-    top: 100px;
-    right: 20px;
-    background-color: #E700D0;
-    color: #121212;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 2px solid #E700D0;
+    background-color: #121212;
+    color: #FFF;
     padding: 10px 20px;
     border-radius: 50px;
+    z-index: 9999;
+    
 }
 
 #confirm-dialog {
@@ -555,6 +559,13 @@ header {
 }
 
 @media (max-width: 525px) {
+
+    #message-container {
+        width: calc(100% - 40px);
+        font-size: 0.9rem;
+        padding: 10px 14px;
+        text-align: center;
+    }
     
     .confirm-buttons {
         display: flex;

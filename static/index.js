@@ -95,7 +95,7 @@ function showMessage(message) {
     setTimeout(() => {
         messageContainer.classList.remove("visible");  
         messageContainer.textContent = "";
-    }, 10000);
+    }, 3000);
 }
 
 
@@ -184,10 +184,10 @@ function saveAlbum(album) {
         "savedAlbums", 
         JSON.stringify(savedAlbums));
 
-        showMessage(`${savedAlbum.title} lagt til og vises under Min musikk`);
+        showMessage(`ℹ️   ${savedAlbum.title} lagt til og vises under Min musikk`);
     }
     else {
-        showMessage(`${savedAlbum.title} er allerede lagret under Min musikk`);
+        showMessage(`ℹ️   ${savedAlbum.title} er allerede lagret under Min musikk`);
     }
     
 
