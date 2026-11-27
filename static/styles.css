@@ -7,6 +7,12 @@
     overflow: hidden;
 }
 
+
+/* General HTML Styles */
+html {
+    overflow-y: scroll;
+}
+
 /* DIALOG STYLES */
 
 #message-container {
